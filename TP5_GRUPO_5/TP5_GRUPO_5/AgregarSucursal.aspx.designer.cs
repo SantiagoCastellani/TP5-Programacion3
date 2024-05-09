@@ -96,6 +96,15 @@ namespace TP5_GRUPO_5
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
+        /// Control txtDesc.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDesc;
+
+        /// <summary>
         /// Control Label5.
         /// </summary>
         /// <remarks>

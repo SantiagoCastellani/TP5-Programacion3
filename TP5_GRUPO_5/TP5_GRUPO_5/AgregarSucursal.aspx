@@ -32,7 +32,7 @@
             width: 192px;
         }
         .auto-style11 {
-            width: 488px;
+            width: 308px;
         }
         .auto-style12 {
             width: 88px;
@@ -104,7 +104,8 @@
                     <asp:Label ID="Label4" runat="server" Text="Descripcion:"></asp:Label>
                 </td>
                 <td class="auto-style11">
-                    <textarea id="TextArea1" cols="20" name="S1" rows="2"></textarea></td>
+                    <asp:TextBox ID="txtDesc" runat="server" Width="190px"></asp:TextBox>
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
@@ -113,7 +114,7 @@
                 <td>
                     <asp:Label ID="Label5" runat="server" Text="Provincia:"></asp:Label>
                 </td>
-                <td>
+                <td class="auto-style11">
                     <asp:DropDownList ID="ddlProvincias" runat="server" Width="265px">
                     </asp:DropDownList>
                 </td>
@@ -132,7 +133,7 @@
             &nbsp;</p>
         <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnCargarSucursal" runat="server" Text="Aceptar" />
+            <asp:Button ID="btnCargarSucursal" runat="server" Text="Aceptar" OnClick="btnCargarSucursal_Click" />
         </p>
     </form>
 </body>
