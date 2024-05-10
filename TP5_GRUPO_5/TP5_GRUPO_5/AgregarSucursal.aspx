@@ -19,9 +19,6 @@
         .auto-style5 {
             width: 216px;
         }
-        .auto-style6 {
-            width: 120px;
-        }
         .auto-style7 {
             width: 121px;
         }
@@ -37,6 +34,9 @@
         .auto-style12 {
             width: 88px;
         }
+        .auto-style13 {
+            width: 63px;
+        }
     </style>
 </head>
 <body>
@@ -48,7 +48,7 @@
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -61,7 +61,7 @@
                     <td class="auto-style5">
                         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/ListadoDeSucursales.aspx">Listar Sucursales</asp:HyperLink>
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>
                         <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/EliminarSucursal.aspx">Eliminar Sucursal</asp:HyperLink>
                     </td>
@@ -72,7 +72,7 @@
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -123,7 +123,7 @@
                 <td class="auto-style12">&nbsp;</td>
                 <td class="auto-style10">Direccion:</td>
                 <td class="auto-style11">
-                    <asp:TextBox ID="TextBox3" runat="server" Width="258px"></asp:TextBox>
+                    <asp:TextBox ID="TxtDir" runat="server" Width="258px"></asp:TextBox>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -134,6 +134,8 @@
         <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnCargarSucursal" runat="server" Text="Aceptar" OnClick="btnCargarSucursal_Click" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="LblMensaje" runat="server"></asp:Label>
         </p>
     </form>
 </body>

@@ -11,9 +11,15 @@ namespace TP5_GRUPO_5
 {
     public partial class AgregarSucursal : System.Web.UI.Page
     {
-        private const string servidorLocal = @"AXEL\SQLEXPRESS";
+        private const string servidorLocal = @"DESKTOP-GUUQKR5\SQLEXPRESS
+";
         private const string urlBD = @"Data Source=" + servidorLocal + ";Initial Catalog=BDSucursales;Integrated Security=True";
         private string getProvincias = "SELECT * FROM Provincia";
+       // private string Consulta;
+        private int f;
+        private Conexion conexion = new Conexion();
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -44,7 +50,7 @@ namespace TP5_GRUPO_5
         {
 
             //verificar si los textBox estan vacios.
-            if(string.IsNullOrEmpty(txtNombreSucursal.Text) || string.IsNullOrEmpty(txtDesc.Text) || string.IsNullOrEmpty(TextBox3.Text))
+            if(string.IsNullOrEmpty(txtNombreSucursal.Text) || string.IsNullOrEmpty(txtDesc.Text) || string.IsNullOrEmpty(TxtDir.Text))
             {
                 //// mostrar mensaje de error
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alertScript", "alert('Por favor, complete todos los campos.');", true);
@@ -55,38 +61,40 @@ namespace TP5_GRUPO_5
 
             //obtener datos
 
-            string nombreSucursal = txtNombreSucursal.Text;
-            string descripcion = txtDesc.Text;
-            string provincia = ddlProvincias.SelectedValue;
-            string direccion = TextBox3.Text;
+            //string nombreSucursal = txtNombreSucursal.Text;
+            //string descripcion = txtDesc.Text;
+            //string provincia = ddlProvincias.SelectedValue;
+            //string direccion = TxtDir.Text;
 
             //crear consulta SQL
 
-            string Consulta = "INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) VALUES (@NombreSucursal, @DescripcionSucursal,  @Id_ProvinciaSucursal, @DireccionSucursal)";
+            string Consulta = "INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) VALUES ("+txtNombreSucursal.Text+",'"+txtDesc.Text+"','"+ddlProvincias.SelectedItem.Text+"','"+TxtDir.Text+"')";
 
             //abrir conexion
-            SqlConnection sqlConnection = new SqlConnection(urlBD);
+           // SqlConnection sqlConnection = new SqlConnection(urlBD);
 
             //crear comando SQL
 
-            SqlCommand sqlCommand = new SqlCommand(Consulta, sqlConnection);
+           // SqlCommand sqlCommand = new SqlCommand(Consulta, sqlConnection);
 
             // agregar parametros a la consulta
 
-            sqlCommand.Parameters.AddWithValue("@NombreSucursal", nombreSucursal);
-            sqlCommand.Parameters.AddWithValue("@DescripcionSucursal", descripcion);
-           sqlCommand.Parameters.AddWithValue("@Id_ProvinciaSucursal", provincia);
-            sqlCommand.Parameters.AddWithValue("@DireccionSucursal", direccion);
+           // sqlCommand.Parameters.AddWithValue("@NombreSucursal", nombreSucursal);
+           // sqlCommand.Parameters.AddWithValue("@DescripcionSucursal", descripcion);
+           //sqlCommand.Parameters.AddWithValue("@Id_ProvinciaSucursal", provincia);
+           // sqlCommand.Parameters.AddWithValue("@DireccionSucursal", direccion);
 
             //abrimos la conexion
 
-            sqlConnection.Open();
+            // sqlConnection.Open();
 
             // ejecutar comando SQL
+            f = conexion.ejecutarTransaccion(Consulta);
+           // sqlCommand.ExecuteNonQuery();
 
-            sqlCommand.ExecuteNonQuery();
 
             limpiarCampos();
+            LblMensaje.Text = "Sucursal cargada exitosamente";
         }
 
         private void limpiarCampos()
@@ -94,7 +102,7 @@ namespace TP5_GRUPO_5
             // Limpiar los campos de entrada después de guardar los datos
             txtNombreSucursal.Text = string.Empty;
             txtDesc.Text = string.Empty;
-            TextBox3.Text = string.Empty;
+            TxtDir.Text = string.Empty;
             ddlProvincias.SelectedIndex = 0;
         }
     }

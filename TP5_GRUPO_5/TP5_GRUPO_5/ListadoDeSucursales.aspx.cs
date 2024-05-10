@@ -13,5 +13,15 @@ namespace TP5_GRUPO_5
         {
 
         }
+
+        protected void GridView1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

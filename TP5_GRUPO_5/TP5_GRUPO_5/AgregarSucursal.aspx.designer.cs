@@ -123,13 +123,13 @@ namespace TP5_GRUPO_5
         protected global::System.Web.UI.WebControls.DropDownList ddlProvincias;
 
         /// <summary>
-        /// Control TextBox3.
+        /// Control TxtDir.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox TxtDir;
 
         /// <summary>
         /// Control btnCargarSucursal.
@@ -139,5 +139,14 @@ namespace TP5_GRUPO_5
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCargarSucursal;
+
+        /// <summary>
+        /// Control LblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblMensaje;
     }
 }
