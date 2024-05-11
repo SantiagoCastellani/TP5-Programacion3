@@ -51,31 +51,31 @@ namespace TP5_GRUPO_5
         protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
 
         /// <summary>
-        /// Control TxtBuscarId.
+        /// Control txtIdSucursal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtBuscarId;
+        protected global::System.Web.UI.WebControls.TextBox txtIdSucursal;
 
         /// <summary>
-        /// Control BtnFiltrar.
+        /// Control btnFiltrarById.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnFiltrar;
+        protected global::System.Web.UI.WebControls.Button btnFiltrarById;
 
         /// <summary>
-        /// Control BtnMostrarTodos.
+        /// Control btnMostrarTodos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnMostrarTodos;
+        protected global::System.Web.UI.WebControls.Button btnMostrarTodos;
 
         /// <summary>
         /// Control gvSucursales.

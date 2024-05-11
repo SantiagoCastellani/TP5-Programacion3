@@ -22,6 +22,9 @@
         .auto-style5 {
             margin-left: 0px;
         }
+        .auto-style6 {
+            height: 31px;
+        }
     </style>
 </head>
 <body>
@@ -72,13 +75,13 @@
                 </tr>
                 <tr>
                     <td colspan="2">Búsqueda ingrese Id sucursal:&nbsp;
-                        <asp:TextBox ID="TxtBuscarId" runat="server" CssClass="auto-style5"></asp:TextBox>
+                        <asp:TextBox ID="txtIdSucursal" runat="server" CssClass="auto-style5"></asp:TextBox>
                     </td>
                     <td colspan="2">
-                        <asp:Button ID="BtnFiltrar" runat="server" CssClass="auto-style5" Text="Filtrar" Width="80px" />
+                        <asp:Button ID="btnFiltrarById" runat="server" CssClass="auto-style5" Text="Filtrar" Width="80px" OnClick="btnFiltrarById_Click" />
                     </td>
                     <td colspan="2">
-                        <asp:Button ID="BtnMostrarTodos" runat="server" CssClass="auto-style5" Text="Mostrar todos" Width="120px" />
+                        <asp:Button ID="btnMostrarTodos" runat="server" CssClass="auto-style5" Text="Mostrar todos" Width="120px" OnClick="btnMostrarTodos_Click" />
                     </td>
                     <td colspan="2">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -89,13 +92,19 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td colspan="8">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td colspan="8" class="auto-style6">
+                        <asp:GridView ID="gvSucursales" runat="server">
+                            <Columns>
+                                <asp:BoundField />
+                            </Columns>
+                        </asp:GridView>
+                    </td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
                 </tr>
                 <tr>
                     <td colspan="8">
