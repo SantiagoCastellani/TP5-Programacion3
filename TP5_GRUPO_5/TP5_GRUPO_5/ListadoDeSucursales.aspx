@@ -22,6 +22,9 @@
         .auto-style5 {
             margin-left: 0px;
         }
+        .auto-style6 {
+            height: 31px;
+        }
     </style>
 </head>
 <body>
@@ -72,13 +75,13 @@
                 </tr>
                 <tr>
                     <td colspan="2">Búsqueda ingrese Id sucursal:&nbsp;
-                        <asp:TextBox ID="TxtBuscarId" runat="server" CssClass="auto-style5"></asp:TextBox>
+                        <asp:TextBox ID="txtIdSucursal" runat="server" CssClass="auto-style5"></asp:TextBox>
                     </td>
                     <td colspan="2">
-                        <asp:Button ID="BtnFiltrar" runat="server" CssClass="auto-style5" Text="Filtrar" Width="80px" />
+                        <asp:Button ID="btnFiltrarById" runat="server" CssClass="auto-style5" Text="Filtrar" Width="80px" OnClick="btnFiltrarById_Click" />
                     </td>
                     <td colspan="2">
-                        <asp:Button ID="BtnMostrarTodos" runat="server" CssClass="auto-style5" Text="Mostrar todos" Width="120px" />
+                        <asp:Button ID="btnMostrarTodos" runat="server" CssClass="auto-style5" Text="Mostrar todos" Width="120px" OnClick="btnMostrarTodos_Click" />
                     </td>
                     <td colspan="2">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -89,13 +92,19 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td colspan="8">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td colspan="8" class="auto-style6">
+                        <asp:GridView ID="gvSucursales" runat="server">
+                            <Columns>
+                                <asp:BoundField />
+                            </Columns>
+                        </asp:GridView>
+                    </td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
                 </tr>
                 <tr>
                     <td colspan="8">&nbsp;</td>
@@ -108,17 +117,7 @@
                 </tr>
                 <tr>
                     <td colspan="8">
-                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id_Sucursal" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="896px">
-                            <Columns>
-                                <asp:BoundField DataField="Id_Sucursal" HeaderText="Id_Sucursal" InsertVisible="False" ReadOnly="True" SortExpression="Id_Sucursal" />
-                                <asp:BoundField DataField="NombreSucursal" HeaderText="NombreSucursal" SortExpression="NombreSucursal" />
-                                <asp:BoundField DataField="DescripcionSucursal" HeaderText="DescripcionSucursal" SortExpression="DescripcionSucursal" />
-                                <asp:BoundField DataField="Provincia" HeaderText="Provincia" SortExpression="Provincia" />
-                                <asp:BoundField DataField="DireccionSucursal" HeaderText="DireccionSucursal" SortExpression="DireccionSucursal" />
-                            </Columns>
-                        </asp:GridView>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT Sucursal.Id_Sucursal, Sucursal.NombreSucursal, Sucursal.DescripcionSucursal,Provincia.DescripcionProvincia AS Provincia, Sucursal.DireccionSucursal FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia"></asp:SqlDataSource>
-                    </td>
+                        &nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
