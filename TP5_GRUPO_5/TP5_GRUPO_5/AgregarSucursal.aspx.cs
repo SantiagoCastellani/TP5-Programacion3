@@ -11,7 +11,7 @@ namespace TP5_GRUPO_5
 {
     public partial class AgregarSucursal : System.Web.UI.Page
     {
-        private const string servidorLocal = "SANTIDEV";
+        private const string servidorLocal = "";
         private const string urlBD = "Data Source=" + servidorLocal + @"\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True";
 
         private string getProvincias = "SELECT * FROM Provincia";
