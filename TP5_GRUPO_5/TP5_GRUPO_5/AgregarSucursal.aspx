@@ -19,9 +19,6 @@
         .auto-style5 {
             width: 216px;
         }
-        .auto-style6 {
-            width: 120px;
-        }
         .auto-style7 {
             width: 121px;
         }
@@ -32,10 +29,13 @@
             width: 192px;
         }
         .auto-style11 {
-            width: 488px;
+            width: 308px;
         }
         .auto-style12 {
             width: 88px;
+        }
+        .auto-style13 {
+            width: 63px;
         }
     </style>
 </head>
@@ -48,7 +48,7 @@
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -61,7 +61,7 @@
                     <td class="auto-style5">
                         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/ListadoDeSucursales.aspx">Listar Sucursales</asp:HyperLink>
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>
                         <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/EliminarSucursal.aspx">Eliminar Sucursal</asp:HyperLink>
                     </td>
@@ -72,7 +72,7 @@
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style13">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -104,7 +104,8 @@
                     <asp:Label ID="Label4" runat="server" Text="Descripcion:"></asp:Label>
                 </td>
                 <td class="auto-style11">
-                    <textarea id="TextArea1" cols="20" name="S1" rows="2"></textarea></td>
+                    <asp:TextBox ID="txtDesc" runat="server" Width="190px"></asp:TextBox>
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
@@ -113,7 +114,7 @@
                 <td>
                     <asp:Label ID="Label5" runat="server" Text="Provincia:"></asp:Label>
                 </td>
-                <td>
+                <td class="auto-style11">
                     <asp:DropDownList ID="ddlProvincias" runat="server" Width="265px">
                     </asp:DropDownList>
                 </td>
@@ -122,7 +123,7 @@
                 <td class="auto-style12">&nbsp;</td>
                 <td class="auto-style10">Direccion:</td>
                 <td class="auto-style11">
-                    <asp:TextBox ID="TextBox3" runat="server" Width="258px"></asp:TextBox>
+                    <asp:TextBox ID="TxtDir" runat="server" Width="258px"></asp:TextBox>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -132,7 +133,9 @@
             &nbsp;</p>
         <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnCargarSucursal" runat="server" Text="Aceptar" />
+            <asp:Button ID="btnCargarSucursal" runat="server" Text="Aceptar" OnClick="btnCargarSucursal_Click" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="LblMensaje" runat="server"></asp:Label>
         </p>
     </form>
 </body>

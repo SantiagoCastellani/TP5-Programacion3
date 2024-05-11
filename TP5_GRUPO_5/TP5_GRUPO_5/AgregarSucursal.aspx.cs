@@ -5,16 +5,20 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-
 using System.Data.SqlClient;
 
 namespace TP5_GRUPO_5
 {
     public partial class AgregarSucursal : System.Web.UI.Page
     {
-        private const string servidorLocal = @"SANTIDEV\SQLEXPRESS";
-        private const string urlBD = @"Data Source=" + servidorLocal + ";Initial Catalog=BDSucursales;Integrated Security=True";
+        private const string servidorLocal = "SANTIDEV";
+        private const string urlBD = "Data Source=" + servidorLocal + @"\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True";
+
         private string getProvincias = "SELECT * FROM Provincia";
+        private int result;
+        private Conexion conexion = new Conexion();
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -39,6 +43,41 @@ namespace TP5_GRUPO_5
                 connection.Close();
             }
 
+        }
+
+        protected void btnCargarSucursal_Click(object sender, EventArgs e)
+        {
+            // Validación de Campos NO vacios
+            if(string.IsNullOrEmpty(txtNombreSucursal.Text) || string.IsNullOrEmpty(txtDesc.Text) || string.IsNullOrEmpty(TxtDir.Text))
+            {
+                // Alert:Mensaje de Error
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertScript", "alert('Por favor, complete todos los campos.');", true);
+                return;
+            }
+            string nombreSucursal = txtNombreSucursal.Text;
+            string descripcion = txtDesc.Text;
+            string provincia = ddlProvincias.SelectedValue;
+            string direccion = TxtDir.Text;
+            string url = "Que linda imagen.com";
+
+            string insert = "INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_HorarioSucursal, Id_ProvinciaSucursal, DireccionSucursal, URL_Imagen_Sucursal) VALUES ('" + nombreSucursal + "','" + descripcion + "'," + 1 + "," + 1 + ",'" + direccion + "','" + url + "')";
+
+            result = conexion.ejecutarTransaccion(insert);
+
+            if (result == 1)
+            {
+                limpiarCampos();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertScript", "alert('La Sucursal fue agregada a la lista de sucursales.');", true);
+            }
+
+        }
+
+        private void limpiarCampos()
+        {
+            // Limpiar los campos de entrada después de guardar los datos
+            txtNombreSucursal.Text = string.Empty;
+            txtDesc.Text = string.Empty;
+            TxtDir.Text = string.Empty;
         }
     }
 }
