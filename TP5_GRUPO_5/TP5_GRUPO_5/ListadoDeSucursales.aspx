@@ -107,7 +107,10 @@
                     <td class="auto-style6"></td>
                 </tr>
                 <tr>
-                    <td colspan="8">&nbsp;</td>
+                    <td colspan="8">
+                        <asp:GridView ID="gvSucursales" runat="server">
+                        </asp:GridView>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
