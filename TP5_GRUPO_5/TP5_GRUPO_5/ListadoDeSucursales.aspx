@@ -98,7 +98,10 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td colspan="8">&nbsp;</td>
+                    <td colspan="8">
+                        <asp:GridView ID="gvSucursales" runat="server">
+                        </asp:GridView>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -108,17 +111,7 @@
                 </tr>
                 <tr>
                     <td colspan="8">
-                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id_Sucursal" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="896px">
-                            <Columns>
-                                <asp:BoundField DataField="Id_Sucursal" HeaderText="Id_Sucursal" InsertVisible="False" ReadOnly="True" SortExpression="Id_Sucursal" />
-                                <asp:BoundField DataField="NombreSucursal" HeaderText="NombreSucursal" SortExpression="NombreSucursal" />
-                                <asp:BoundField DataField="DescripcionSucursal" HeaderText="DescripcionSucursal" SortExpression="DescripcionSucursal" />
-                                <asp:BoundField DataField="Provincia" HeaderText="Provincia" SortExpression="Provincia" />
-                                <asp:BoundField DataField="DireccionSucursal" HeaderText="DireccionSucursal" SortExpression="DireccionSucursal" />
-                            </Columns>
-                        </asp:GridView>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BDSucursalesConnectionString %>" SelectCommand="SELECT Sucursal.Id_Sucursal, Sucursal.NombreSucursal, Sucursal.DescripcionSucursal,Provincia.DescripcionProvincia AS Provincia, Sucursal.DireccionSucursal FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia"></asp:SqlDataSource>
-                    </td>
+                        &nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
