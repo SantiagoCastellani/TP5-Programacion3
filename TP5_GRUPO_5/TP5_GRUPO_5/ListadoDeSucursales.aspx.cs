@@ -56,6 +56,10 @@ namespace TP5_GRUPO_5
         protected void btnFiltrarById_Click(object sender, EventArgs e)
         {
             string id = txtIdSucursal.Text;
+            if (id == "")
+            {
+                id = "0";
+            }
             rellenarGrilla(int.Parse(id));
         }
     }
