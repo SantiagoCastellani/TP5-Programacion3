@@ -11,10 +11,10 @@ namespace TP5_GRUPO_5
 {
     public partial class ListadoDeSucursales : System.Web.UI.Page
     {
-        private const string servidorLocal = "SANTIDEV";
+        private const string servidorLocal = @"localhost";
         private const string urlBD = "Data Source=" + servidorLocal + @"\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True";
 
-        string getSucursales = "SELECT * FROM Sucursal";
+        string getSucursales = "SELECT Sucursal.Id_Sucursal, Sucursal.NombreSucursal, Sucursal.DescripcionSucursal,Provincia.DescripcionProvincia AS Provincia, Sucursal.DireccionSucursal FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
