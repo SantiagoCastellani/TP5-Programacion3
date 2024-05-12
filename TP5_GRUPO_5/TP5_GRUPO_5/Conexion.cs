@@ -8,7 +8,7 @@ namespace TP5_GRUPO_5
 {
     public class Conexion
     {
-        private const string servidorLocal = "";
+        private const string servidorLocal = "AXEL";
         private const string urlBD = "Data Source=" + servidorLocal + @"\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True";
 
         public int ejecutarTransaccion(string consulta)
