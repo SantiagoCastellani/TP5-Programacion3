@@ -10,7 +10,7 @@ namespace TP5_GRUPO_5
 {
     public partial class EliminarSucursal : System.Web.UI.Page
     {
-        private const string servidorLocal = @"AXEL\SQLEXPRESS";
+        
         private Conexion conexion = new Conexion();
         protected void Page_Load(object sender, EventArgs e)
         {
