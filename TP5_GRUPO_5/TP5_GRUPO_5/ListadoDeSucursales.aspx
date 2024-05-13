@@ -83,7 +83,9 @@
                     <td colspan="2">
                         <asp:Button ID="btnMostrarTodos" runat="server" CssClass="auto-style5" Text="Mostrar todos" Width="120px" OnClick="btnMostrarTodos_Click" />
                     </td>
-                    <td colspan="2">&nbsp;</td>
+                    <td colspan="2">
+                        <asp:Label ID="lblMensaje" runat="server" ForeColor="#CC0000"></asp:Label>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

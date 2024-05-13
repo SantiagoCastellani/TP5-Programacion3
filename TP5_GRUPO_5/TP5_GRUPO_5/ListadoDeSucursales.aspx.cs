@@ -25,7 +25,8 @@ namespace TP5_GRUPO_5
 
         private void rellenarGrilla(int id)
         {
-            SqlConnection connection = new SqlConnection(urlBD);
+           lblMensaje.Text = "";
+           SqlConnection connection = new SqlConnection(urlBD);
             connection.Open();
             SqlCommand sqlCommand = new SqlCommand();
 
@@ -45,7 +46,14 @@ namespace TP5_GRUPO_5
             gvSucursales.DataSource = sqlDataReader;
             gvSucursales.DataBind();
 
+
+            if (!sqlDataReader.HasRows)
+            {
+                lblMensaje.Text = "El Id ingresado NO corresponde a ninguna Sucursal.";
+            }
+
             connection.Close();
+
         }
 
         protected void btnMostrarTodos_Click(object sender, EventArgs e)

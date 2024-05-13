@@ -56,14 +56,14 @@ namespace TP5_GRUPO_5
             }
             string nombreSucursal = txtNombreSucursal.Text;
             string descripcion = txtDesc.Text;
-            string provincia = ddlProvincias.SelectedValue;
+            string idProvincia = ddlProvincias.SelectedValue;
             string direccion = TxtDir.Text;
-            string url = "Que linda imagen.com";
+            string url = "www.imagen.com";
 
-            string insert = "INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_HorarioSucursal, Id_ProvinciaSucursal, DireccionSucursal, URL_Imagen_Sucursal) VALUES ('" + nombreSucursal + "','" + descripcion + "'," + 1 + "," + 1 + ",'" + direccion + "','" + url + "')";
+            string insert = "INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_HorarioSucursal, Id_ProvinciaSucursal, DireccionSucursal, URL_Imagen_Sucursal) VALUES ('" + nombreSucursal + "','" + descripcion + "'," + 1 + "," + idProvincia + ",'" + direccion + "','" + url + "')";
 
             result = conexion.ejecutarTransaccion(insert);
-
+            
             if (result == 1)
             {
                 limpiarCampos();

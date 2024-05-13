@@ -37,7 +37,7 @@ namespace TP5_GRUPO_5
             }
             else
             {
-                lblMensaje.Text = "el ID ingresado no es correcto";
+                lblMensaje.Text = "El ID ingresado NO es correcto.";
             }
         }
 
